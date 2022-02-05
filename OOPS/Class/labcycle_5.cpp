@@ -24,6 +24,9 @@ public:
 
     vehicle()
     {
+        cout << "Enter the registration no. for vehicle " << count + 1 << ": ";
+        setregno();
+        getregno();
         count++;
         cout << "The Vehicle count in the garage is: " << count << endl;
     }
@@ -40,21 +43,20 @@ int vehicle ::count = 0;
 int main()
 {
     vehicle v[5];
-    {
-        int n;
+    // {
+    //     int n;
 
-        cout << "Enter the no. of vehicles from 1 to 5: ";
-        cin >> n;
+    //     cout << "Enter the no. of vehicles from 1 to 5: ";
+    //     cin >> n;
 
-        for (int i = 0; i < n; i++)
-        {
-            cout << "Enter the registration no. for vehicle " << i + 1 << ": ";
-            v[i].setregno();
-        }
-        for (int i = 0; i < n; i++)
-        {
-            v[i].getregno();
-        }
-    }
+    //     for (int i = 0; i < n; i++)
+    //     {
+    //         v[i].setregno();
+    //     }
+    //     for (int i = 0; i < n; i++)
+    //     {
+    //         v[i].getregno();
+    //     }
+    // }
     return 0;
 }

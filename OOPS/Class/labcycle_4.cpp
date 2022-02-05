@@ -40,9 +40,11 @@ public:
 matrix transpose(matrix o1, int n, int m)
 {
     matrix temp;
-    for (int i = 0; i < 3; i++)
+    temp.n = m;
+    temp.m = n;
+    for (int i = 0; i < n; i++)
     {
-        for (int j = 0; j < 3; j++)
+        for (int j = 0; j < m; j++)
         {
             temp.mat[j][i] = o1.mat[i][j];
             // cout << mat[j][i] << " ";
