@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 
 class Shop
 {
@@ -11,7 +12,7 @@ public:
   Shop(string s) : ShopID(“NULL”), name(s), profit(0.0) {}
   Shop(int IDs) : ShopID(IDs), name(“NULL), profit(0.0) {}
 
-  //or Shop(){
+  // or Shop(){
   ShopID = 0;
   name = “NULL”;
   profit = 0.0
