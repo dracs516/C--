@@ -12,10 +12,10 @@ int str_mat(string a, string b)
         }
         if (j == b.length())
         {
-            return 1;
+            return i;
         }
     }
-    return 0;
+    return -1;
 }
 
 int main()
@@ -30,13 +30,13 @@ int main()
     clock_t start = clock();
     int x = str_mat(str1, str2);
     clock_t end = clock();
-    if (x == 1)
+    if (x == -1)
     {
-        cout << "Pattern found" << endl;
+        cout << "Pattern not found" << endl;
     }
     else
     {
-        cout << "Pattern not found" << endl;
+        cout << "Pattern found at index: " << x << endl;
     }
     cout << std::fixed << "Time taken for selection sort is: " << (((double)end - (double)start) / (double)CLOCKS_PER_SEC) << endl;
     return 0;
