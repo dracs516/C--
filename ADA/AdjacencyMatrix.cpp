@@ -7,7 +7,8 @@ using namespace std;
 
 int minIndex(int key[], bool MST[])
 {
-    int min = INT_MAX, min_index;
+    int min = INT_MAX;
+    int min_index;
     for (int i = 0; i < V; i++)
     {
         if (MST[i] == false && key[i] < min)
@@ -23,7 +24,9 @@ void printMST(int parent[], int graph[V][V])
 {
     cout << "Edge \tWeight\n";
     for (int i = 1; i < V; i++)
+    {
         cout << parent[i] << " - " << i << " \t" << graph[i][parent[i]] << " \n";
+    }
 }
 
 void primMST(int graph[V][V])
