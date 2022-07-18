@@ -1,4 +1,5 @@
 #include <iostream>
+#include <bits/stdc++.h>
 #include <climits>
 using namespace std;
 
@@ -6,8 +7,7 @@ using namespace std;
 
 int minIndex(int key[], bool MST[])
 {
-    int min = INT_MAX;
-    int min_index;
+    int min = INT_MAX, min_index;
     for (int i = 0; i < V; i++)
     {
         if (MST[i] == false && key[i] < min)
@@ -41,16 +41,17 @@ void primMST(int graph[V][V])
     parent[0] = -1;
     key[0] = 0;
 
-    int u = minIndex(key, MST);
-
-    MST[u] = true;
-
-    for (int i = 0; i < V; i++)
+    for (int count = 0; count < V - 1; count++)
     {
-        if (graph[u][i] && MST[i] == false && graph[u][i] < key[i])
+        int u = minIndex(key, MST);
+        MST[u] = true;
+        for (int i = 0; i < V; i++)
         {
-            parent[i] = u;
-            key[i] = graph[u][i];
+            if (graph[u][i] && MST[i] == false && graph[u][i] < key[i])
+            {
+                parent[i] = u;
+                key[i] = graph[u][i];
+            }
         }
     }
     printMST(parent, graph);
